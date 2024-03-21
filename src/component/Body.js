@@ -32,7 +32,7 @@ const Body = () => {
 {data.map((e)=>{
     return(
        <div key={e.id} style={{display:"flex",flexWrap:"wrap"}}>
-            <img srcSet='e.urls.raw' alt="img"></img>
+            <img src='e.urls.raw' alt="img"></img>
         </div>
        
     )
