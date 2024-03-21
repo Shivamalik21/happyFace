@@ -15,17 +15,20 @@ const Body = () => {
           console.error(error);
       }
     }
+    console.log(data)
     useEffect(()=>{
         myfunction()
     },[])
 
   return (
-    <div>
+    
+    <div style={{display:"flex",flexDirection:"row", flexWrap:"wrap", position:"relative" }}>
 {data.map((e)=>{
     return(
-       <div key={e.id} style={{display:"flex",flexWrap:"wrap"}}>
-            <img src={e.urls.raw} alt="img"></img>
-            <p>{e.slug}</p>
+       <div key={e.id} style={{width:"20%", height:"20vw" , margin:"6%", textAlign:"center"}}>
+            <img src={e.urls.raw} alt="img" style={{width:"100%",height:"100%", borderRadius:"20px"}}></img>
+            <p style={{fontSize:"20px",textDecoration:"underLine"}}>{e.alt_description}</p>
+            
         </div>
        
     )
