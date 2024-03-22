@@ -1,8 +1,8 @@
 import React from 'react'
 import {useState} from 'react'
 
-const Navbar = ({setvalue}) => {
- const[text,settext]=useState("")
+const Navbar = ({setvalue,sethead}) => {
+  const[text,settext]=useState("")
  
     
   async function myfun(){
@@ -16,11 +16,12 @@ const Navbar = ({setvalue}) => {
  return (
     <div>
     <div style={{display:"flex",justifyContent:"space-around",alignItems:"center"}}>
-      <img src=""alt='logo' onClick={()=>{
+      <img id="logo" style={{width:"50px",height:"50px", borderRadius:"50%"}} src='https://images.unsplash.com/photo-1601158935942-52255782d322?ixid=M3w1ODE3MDd8MHwxfHNlYXJjaHwxMHx8bG9nb3xlbnwwfHx8fDE3MTEwODE3Nzh8MA&ixlib=rb-4.0.3'alt='logo' onClick={()=>{
         setvalue("https://api.unsplash.com/photos/?client_id=oWE1E5b4kNNHZoy0f1lvMbmzm5__MItcAwQFJKTNY0c")
        document.getElementById("inpu").value=""
        settext("")
-      }}></img>
+       sethead("Home")
+      }}/>
       <div>
         <input id="inpu" placeholder='Search' style={{width:"40vw", height:"6vh",borderRadius:"50px", backgroundColor:"lightgray", border:"none", paddingLeft:"2vw"}} onChange={(e)=>{
          settext(e.target.value)
@@ -30,6 +31,7 @@ const Navbar = ({setvalue}) => {
           alert("Please input in search")
         }else{
           myfun()
+          sethead(text)
         }
         }}>Search</button>
         </div>

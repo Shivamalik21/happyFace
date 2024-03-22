@@ -1,7 +1,7 @@
 import React from 'react'
 import {useState,useEffect} from 'react'
 import axios from 'axios';
-const Body = ({value}) => {
+const Body = ({value,head}) => {
   const[data,setdata]=useState([])
     
       async function myfunction(){
@@ -23,8 +23,10 @@ const Body = ({value}) => {
     },[value])
 
   return (
-    
+    <div>
+      <h1 style={{marginLeft:"45%"}}>{head}</h1>
     <div style={{display:"flex",flexDirection:"row", flexWrap:"wrap", }}>
+      
 {data.map((e)=>{
     return(
        <div key={e.id} style={{width:"20%", height:"20vw" , margin:"6%", textAlign:"center", marginLeft:"7%"}}>
@@ -36,6 +38,7 @@ const Body = ({value}) => {
     )
 
 })}
+    </div>
     </div>
   )
 }
