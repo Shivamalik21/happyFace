@@ -16,8 +16,13 @@ const Navbar = ({setvalue}) => {
  return (
     <div>
     <div style={{display:"flex",justifyContent:"space-around",alignItems:"center"}}>
+      <img src=""alt='logo' onClick={()=>{
+        setvalue("https://api.unsplash.com/photos/?client_id=oWE1E5b4kNNHZoy0f1lvMbmzm5__MItcAwQFJKTNY0c")
+       document.getElementById("inpu").value=""
+       settext("")
+      }}></img>
       <div>
-        <input placeholder='Search' style={{width:"40vw", height:"6vh",borderRadius:"50px", backgroundColor:"lightgray", border:"none", paddingLeft:"2vw"}} onChange={(e)=>{
+        <input id="inpu" placeholder='Search' style={{width:"40vw", height:"6vh",borderRadius:"50px", backgroundColor:"lightgray", border:"none", paddingLeft:"2vw"}} onChange={(e)=>{
          settext(e.target.value)
         }}></input>
         <button style={{width:"8vw", marginLeft:"2vw", height:"2.5vw", borderRadius:"50px", color:"white", backgroundColor:"orange", border:"none"}} onClick={()=>{
