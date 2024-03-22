@@ -5,9 +5,7 @@ const Body = () => {
   const[data,setdata]=useState([])
     
       async function myfunction(){
-
-      
-      try {
+ try {
           const response = await axios.request("https://api.unsplash.com/photos/?client_id=oWE1E5b4kNNHZoy0f1lvMbmzm5__MItcAwQFJKTNY0c");
           setdata(response.data)
          
@@ -15,17 +13,17 @@ const Body = () => {
           console.error(error);
       }
     }
-    console.log(data)
+   
     useEffect(()=>{
         myfunction()
     },[])
 
   return (
     
-    <div style={{display:"flex",flexDirection:"row", flexWrap:"wrap", position:"relative" }}>
+    <div style={{display:"flex",flexDirection:"row", flexWrap:"wrap", }}>
 {data.map((e)=>{
     return(
-       <div key={e.id} style={{width:"20%", height:"20vw" , margin:"6%", textAlign:"center"}}>
+       <div key={e.id} style={{width:"20%", height:"20vw" , margin:"6%", textAlign:"center", marginLeft:"7%"}}>
             <img src={e.urls.raw} alt="img" style={{width:"100%",height:"100%", borderRadius:"20px"}}></img>
             <p style={{fontSize:"20px",textDecoration:"underLine"}}>{e.alt_description}</p>
             
