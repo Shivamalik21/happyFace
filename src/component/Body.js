@@ -1,13 +1,17 @@
 import React from 'react'
 import {useState,useEffect} from 'react'
 import axios from 'axios';
-const Body = () => {
+const Body = ({value}) => {
   const[data,setdata]=useState([])
     
       async function myfunction(){
  try {
-          const response = await axios.request("https://api.unsplash.com/photos/?client_id=oWE1E5b4kNNHZoy0f1lvMbmzm5__MItcAwQFJKTNY0c");
+          const response = await axios.request(value);
+         if(response.data.results){
+          setdata(response.data.results)
+         }else{
           setdata(response.data)
+         }
          
       } catch (error) {
           console.error(error);
@@ -16,7 +20,7 @@ const Body = () => {
    
     useEffect(()=>{
         myfunction()
-    },[])
+    },[value])
 
   return (
     
