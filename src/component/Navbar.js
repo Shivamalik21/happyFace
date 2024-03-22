@@ -21,7 +21,11 @@ const Navbar = ({setvalue}) => {
          settext(e.target.value)
         }}></input>
         <button style={{width:"8vw", marginLeft:"2vw", height:"2.5vw", borderRadius:"50px", color:"white", backgroundColor:"orange", border:"none"}} onClick={()=>{
+        if(text===""){
+          alert("Please input in search")
+        }else{
           myfun()
+        }
         }}>Search</button>
         </div>
         <ul style={{display:"flex", gap:"5vw",listStyle:"none", }}>
